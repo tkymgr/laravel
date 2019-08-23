@@ -19,8 +19,8 @@ class CreateGroupShopTable extends Migration
             $table->bigInteger('shop_id')->unsigned()->comment('店舗ID');
             $table->timestamps();
 
-            $table->foreign('group_id')->references('id')->on('groups');
-            $table->foreign('shop_id')->references('id')->on('shops');
+            //$table->foreign('group_id')->references('id')->on('groups');
+            //$table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 
