@@ -31,6 +31,8 @@ class CreateCustomerShopTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('customer_shop');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

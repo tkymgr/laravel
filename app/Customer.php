@@ -8,9 +8,9 @@ class Customer extends Model
 {
     protected $table = 'customers';
 
-    public function getNameAttribute()
+    public function shops()
     {
-        return "{$this->last_name} {$this->first_name}";
+        return $this->belongsToMany('App\Shop');
     }
 
 }

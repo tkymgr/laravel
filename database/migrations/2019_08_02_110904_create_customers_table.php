@@ -15,10 +15,8 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('last_name')->comment('顧客名字');
-            $table->string('first_name')->comment('顧客名前');
-            $table->string('last_kana')->comment('顧客名字カナ');
-            $table->string('first_kana')->comment('顧客名前カナ');
+            $table->string('name')->comment('顧客名');
+            $table->string('kana')->comment('顧客名カナ');
             $table->enum('status', ['active', 'stop']);
 
             $table->timestamps();
