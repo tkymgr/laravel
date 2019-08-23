@@ -41,8 +41,8 @@ class HomeController extends Controller
         $keyword = $request->input('keyword');
         if (!empty($keyword)) {
             $customers = Customer::where(function($query) use($keyword) {
-                $query->orWhere('last_name', 'like', '%'.$keyword.'%')
-                    ->orWhere('first_name', 'like', '%'.$keyword.'%');
+                $query->orWhere('name', 'like', '%'.$keyword.'%')
+                    ->orWhere('kana', 'like', '%'.$keyword.'%');
             })
             ->whereHas('shops', function($q) use($shop) {
                 $q->where('shops.id', '=', $shop->id);
